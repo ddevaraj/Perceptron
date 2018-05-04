@@ -36,14 +36,14 @@ def percepClassify():
 
 def readData():
     global weightVector1,weightVector2,bias1, bias2
-    with open("averagedmodel.txt","r") as json_data:
+    with open(sys.argv[1],"r") as json_data:
         data = json.load(json_data)
     weightVector1 = data[0]
     weightVector2 = data[2]
     bias1 = data[1]
     bias2 = data[3]
     print(bias2)
-    with open("dev-text.txt","r") as f:
+    with open(sys.argv[2],"r") as f:
         for line in f:
             lineID.append(line[:line.find(" ")])
             newLine = " ".join(line.split()[3:])

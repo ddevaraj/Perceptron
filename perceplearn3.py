@@ -105,7 +105,7 @@ def delHighFreqWords():
 
 
 def readData():
-    with open("train-labeled.txt", "r") as f:
+    with open(sys.argv[1], "r") as f:
         for line in f:
             sentenceSplits = line.split(" ")
             PosNegSet.append(sentenceSplits[2])
